@@ -36,6 +36,9 @@ class FilterIfPjax
             ->setUriHeader($response, $request)
             ->setVersionHeader($response, $request);
 
+        $response->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate');
+        //$response->header('Pragma', 'no-cache');
+
         return $response;
     }
 
